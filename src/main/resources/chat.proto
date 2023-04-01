@@ -1,0 +1,18 @@
+syntax ="proto3";
+option java_package="ma.enset.stub";
+
+service AppChatService{
+  rpc sendMessage(stream MessageRequest) returns (stream MessageRespense);
+}
+
+message MessageRequest{
+  string currentFrom=1;
+  string currentTo=2;
+  string currentMsg=3;
+}
+
+message MessageRespense{
+  string currentFrom=1;
+  string currentTo=2;
+  string currentMsg=3;
+}

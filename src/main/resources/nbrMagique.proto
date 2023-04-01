@@ -1,0 +1,19 @@
+syntax ="proto3";
+option java_package="ma.enset.stub";
+
+service NombreMagique{
+  rpc broadcastMsg(stream BroadMsgRequest) returns (stream BroadMsgResponse);
+}
+
+message BroadMsgRequest{
+  string from=1;
+  double msg=2;
+}
+
+message BroadMsgResponse{
+ string from=1;
+ string to=2;
+ string msg=3;
+
+}
+
